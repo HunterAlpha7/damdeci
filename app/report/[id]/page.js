@@ -198,6 +198,21 @@ export default function Report({ params }) {
     return 'bg-green-500';
   };
 
+  const getPriorityColor = (priority) => {
+    switch (priority.toLowerCase()) {
+      case 'critical':
+        return 'bg-red-100 text-red-800';
+      case 'high':
+        return 'bg-orange-100 text-orange-800';
+      case 'medium':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'low':
+        return 'bg-green-100 text-green-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+
   const downloadPDF = () => {
     window.print();
   };
@@ -239,7 +254,7 @@ export default function Report({ params }) {
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-indigo-600">{report.totalDamages}</div>
               <div className="text-sm text-gray-600">Total Damages Found</div>
@@ -247,10 +262,6 @@ export default function Report({ params }) {
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">{report.estimatedRepairCost}</div>
               <div className="text-sm text-gray-600">Estimated Repair Cost</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">99.7%</div>
-              <div className="text-sm text-gray-600">AI Accuracy</div>
             </div>
           </div>
         </div>
@@ -266,7 +277,6 @@ export default function Report({ params }) {
                   <th className="text-left py-3 px-4 font-semibold text-gray-900">Car Part</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-900">Damage Type</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-900">Severity</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Score</th>
                 </tr>
               </thead>
               <tbody>
@@ -291,9 +301,6 @@ export default function Report({ params }) {
                         </div>
                         <span className="text-sm font-medium text-gray-900">{damage.severity}%</span>
                       </div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="text-sm font-medium text-gray-900">{damage.repairEstimate}</div>
                     </td>
                   </tr>
                 ))}
