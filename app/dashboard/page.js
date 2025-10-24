@@ -13,50 +13,38 @@ export default function Dashboard() {
   const carSets = [
     {
       id: 1,
-      name: "Sedan - Minor Damage",
-      description: "Honda Civic with minor scratches and dents",
-      manufacturer: "Honda",
+      name: "2006 Ford Focus ZX4",
+      description: "Ford Focus with minor scratches and dents",
+      manufacturer: "Ford",
       images: {
-        front: "/damaged_cars/1/front.jpg",
-        rear: "/damaged_cars/1/rear.jpg", 
-        left: "/damaged_cars/1/left.jpg",
-        right: "/damaged_cars/1/right.jpg"
+        front: "/damaged_cars/1/front.jpeg",
+        rear: "/damaged_cars/1/rear.jpeg", 
+        left: "/damaged_cars/1/left.jpeg",
+        right: "/damaged_cars/1/right.jpeg"
       }
     },
     {
       id: 2,
-      name: "SUV - Moderate Damage",
-      description: "Toyota RAV4 with moderate body damage",
-      manufacturer: "Toyota",
+      name: "2007 Ford Mustang",
+      description: "Ford Mustang with moderate body damage",
+      manufacturer: "Ford",
       images: {
-        front: "/damaged_cars/2/front.jpg",
-        rear: "/damaged_cars/2/rear.jpg",
-        left: "/damaged_cars/2/left.jpg", 
-        right: "/damaged_cars/2/right.jpg"
+        front: "/damaged_cars/2/front.jpeg",
+        rear: "/damaged_cars/2/rear.jpeg",
+        left: "/damaged_cars/2/left.jpeg", 
+        right: "/damaged_cars/2/right.jpeg"
       }
     },
     {
       id: 3,
-      name: "Truck - Heavy Damage",
-      description: "Ford F-150 with significant collision damage",
+      name: "2016 Ford Escape SE",
+      description: "Ford Escape with significant collision damage",
       manufacturer: "Ford",
       images: {
         front: "/damaged_cars/3/front.jpg",
         rear: "/damaged_cars/3/rear.jpg",
         left: "/damaged_cars/3/left.jpg",
         right: "/damaged_cars/3/right.jpg"
-      }
-    },
-    {
-      id: 4,
-      name: "Luxury Car - Cosmetic Damage",
-      description: "BMW 3 Series with cosmetic imperfections",
-      manufacturer: "BMW",
-      images: {
-        front: "/damaged_cars/4/front.jpg",
-        rear: "/damaged_cars/4/rear.jpg",
-        left: "/damaged_cars/4/left.jpg",
-        right: "/damaged_cars/4/right.jpg"
       }
     }
   ];
@@ -111,7 +99,7 @@ export default function Dashboard() {
         </div>
 
         {/* Car Set Selection */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {carSets.map((carSet) => (
             <div
               key={carSet.id}

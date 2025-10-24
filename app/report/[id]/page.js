@@ -10,9 +10,9 @@ export default function Report({ params }) {
   const reportData = {
     1: {
       carInfo: {
-        make: "Honda",
-        model: "Civic",
-        year: "2020",
+        make: "Ford",
+        model: "Focus ZX4",
+        year: "2006",
         color: "Silver"
       },
       overallSeverity: 18,
@@ -43,10 +43,10 @@ export default function Report({ params }) {
     },
     2: {
       carInfo: {
-        make: "Toyota",
-        model: "RAV4",
-        year: "2019",
-        color: "White"
+        make: "Ford",
+        model: "Mustang",
+        year: "2007",
+        color: "Red"
       },
       overallSeverity: 42,
       totalDamages: 4,
@@ -95,9 +95,9 @@ export default function Report({ params }) {
     3: {
       carInfo: {
         make: "Ford",
-        model: "F-150",
-        year: "2021",
-        color: "Black"
+        model: "Escape SE",
+        year: "2016",
+        color: "White"
       },
       overallSeverity: 78,
       totalDamages: 6,
@@ -156,30 +156,6 @@ export default function Report({ params }) {
           description: "Side mirror housing cracked and mirror broken",
           repairEstimate: "$300 - $500",
           priority: "Medium"
-        }
-      ]
-    },
-    4: {
-      carInfo: {
-        make: "BMW",
-        model: "3 Series",
-        year: "2022",
-        color: "Blue"
-      },
-      overallSeverity: 15,
-      totalDamages: 1,
-      estimatedRepairCost: "$400 - $600",
-      visualAssessment: [
-        { angle: "Front", image: "/report_images/4/front_damage.jpg", description: "Very minor cosmetic imperfection" }
-      ],
-      damages: [
-        {
-          part: "Front Bumper",
-          severity: 15,
-          type: "Minor Scratch",
-          description: "Very light surface scratch barely visible",
-          repairEstimate: "$400 - $600",
-          priority: "Low"
         }
       ]
     }
