@@ -15,29 +15,48 @@ export default function Report({ params }) {
         year: "2006",
         color: "Silver"
       },
-      overallSeverity: 18,
-      totalDamages: 2,
-      estimatedRepairCost: "$800 - $1,200",
+      overallSeverity: 60.5,
+      totalDamages: 4,
+      estimatedRepairCost: "৳60,000 - ৳90,000 BDT",
+      timeline: "5-10 business days",
       visualAssessment: [
-        { angle: "Front", image: "/report_images/1/front_damage.jpg", description: "Minor scuff marks on front bumper" },
-        { angle: "Left", image: "/report_images/1/left_damage.jpg", description: "Small scratch on driver side door" }
+        { angle: "Front", image: "/report_images/1/front_damage.jpg", description: "Front bumper with scrapes and paint peeling" },
+        { angle: "Left", image: "/report_images/1/left_damage.jpg", description: "Severe damage to left rear quarter panel and door" },
+        { angle: "Rear", image: "/report_images/1/rear_damage.jpg", description: "Left rear wheel with flat tire and scuffed rim" },
+        { angle: "Right", image: "/report_images/1/right_damage.jpg", description: "Right side appears relatively undamaged" }
       ],
       damages: [
         {
-          part: "Front Bumper",
-          severity: 12,
-          type: "Scuff Marks",
-          description: "Light scuff marks from parking incident",
-          repairEstimate: "$200 - $400",
-          priority: "Low"
+          part: "Left Rear Quarter Panel",
+          severity: 90,
+          type: "Crumpled, Dent + Deep Scrapes",
+          description: "Severe crumpling with deep scrapes and dents",
+          repairEstimate: "৳25,000 - ৳35,000",
+          priority: "High"
         },
         {
-          part: "Driver Side Door",
-          severity: 25,
-          type: "Scratch",
-          description: "Single scratch approximately 6 inches long",
-          repairEstimate: "$600 - $800",
-          priority: "Low"
+          part: "Left Rear Door",
+          severity: 85,
+          type: "Dent + Deep Scrapes/Gouges",
+          description: "Significant dents with deep scrapes and gouges",
+          repairEstimate: "৳20,000 - ৳30,000",
+          priority: "High"
+        },
+        {
+          part: "Left Rear Wheel/Tire",
+          severity: 80,
+          type: "Flat Tire + Scuffed Rim",
+          description: "Flat tire with scuffed rim requiring replacement",
+          repairEstimate: "৳10,000 - ৳15,000",
+          priority: "High"
+        },
+        {
+          part: "Front Bumper",
+          severity: 50,
+          type: "Scrapes + Paint Peeling",
+          description: "Front bumper with scrapes and paint peeling",
+          repairEstimate: "৳5,000 - ৳10,000",
+          priority: "Medium"
         }
       ]
     },
@@ -48,47 +67,48 @@ export default function Report({ params }) {
         year: "2007",
         color: "White"
       },
-      overallSeverity: 42,
+      overallSeverity: 92.25,
       totalDamages: 4,
-      estimatedRepairCost: "$2,200 - $3,200",
+      estimatedRepairCost: "৳2,500,000 - ৳4,000,000+ BDT (Likely a Total Loss)",
+      timeline: "20-30+ business days (if repair is even attempted)",
       visualAssessment: [
-        { angle: "Front", image: "/report_images/2/front_damage.jpg", description: "Moderate damage to front grille and headlight" },
-        { angle: "Rear", image: "/report_images/2/rear_damage.jpg", description: "Scratches and dent on rear bumper" },
-        { angle: "Left", image: "/report_images/2/left_damage.jpg", description: "Deep scratches on driver side panel" },
-        { angle: "Right", image: "/report_images/2/right_damage.jpg", description: "Minor damage on passenger side" }
+        { angle: "Front", image: "/report_images/2/front_damage.jpg", description: "Severe front-left assembly damage with crushed bumper and fender" },
+        { angle: "Rear", image: "/report_images/2/rear_damage.jpg", description: "Entire rear assembly crushed with missing parts" },
+        { angle: "Left", image: "/report_images/2/left_damage.jpg", description: "Severe damage to left side assembly" },
+        { angle: "Right", image: "/report_images/2/right_damage.jpg", description: "Hood buckled and misaligned" }
       ],
       damages: [
         {
-          part: "Front Grille",
-          severity: 55,
-          type: "Crack",
-          description: "Crack in front grille extending 4 inches",
-          repairEstimate: "$500 - $700",
+          part: "Entire Rear Assembly",
+          severity: 100,
+          type: "Crushed, Bent, Parts Missing",
+          description: "Crushed, bent with missing bumper, trunk, taillights, quarter panels",
+          repairEstimate: "৳1,200,000 - ৳2,000,000",
+          priority: "Critical"
+        },
+        {
+          part: "Front-Left Assembly",
+          severity: 95,
+          type: "Crushed, Bent, Parts Missing",
+          description: "Crushed, bent with missing bumper, fender, headlight",
+          repairEstimate: "৳800,000 - ৳1,200,000",
+          priority: "Critical"
+        },
+        {
+          part: "Hood",
+          severity: 85,
+          type: "Buckled + Misaligned",
+          description: "Hood buckled and misaligned requiring replacement",
+          repairEstimate: "৳300,000 - ৳500,000",
           priority: "High"
         },
         {
-          part: "Front Headlight",
-          severity: 40,
-          type: "Crack",
-          description: "Small crack in headlight housing",
-          repairEstimate: "$300 - $500",
-          priority: "Medium"
-        },
-        {
-          part: "Driver Side Panel",
-          severity: 45,
-          type: "Deep Scratches",
-          description: "Multiple deep scratches across door panel",
-          repairEstimate: "$800 - $1,200",
-          priority: "High"
-        },
-        {
-          part: "Rear Bumper",
-          severity: 30,
-          type: "Dent & Scratches",
-          description: "Small dent with surrounding scratches",
-          repairEstimate: "$600 - $800",
-          priority: "Medium"
+          part: "Frame (Chassis)",
+          severity: 100,
+          type: "Suspected Major Structural Damage",
+          description: "Suspected major structural damage to chassis",
+          repairEstimate: "৳200,000 - ৳300,000",
+          priority: "Critical"
         }
       ]
     },
@@ -99,63 +119,80 @@ export default function Report({ params }) {
         year: "2016",
         color: "Black"
       },
-      overallSeverity: 78,
-      totalDamages: 6,
-      estimatedRepairCost: "$5,200 - $7,800",
+      overallSeverity: 55.0,
+      totalDamages: 8,
+      estimatedRepairCost: "৳550,000 - ৳900,000 BDT",
+      timeline: "15 - 25 business days",
       visualAssessment: [
-        { angle: "Front", image: "/report_images/3/front_damage.jpg", description: "Severe front-end collision damage" },
-        { angle: "Rear", image: "/report_images/3/rear_damage.jpg", description: "Moderate rear-end damage" },
-        { angle: "Left", image: "/report_images/3/left_damage.jpg", description: "Extensive side impact damage" },
-        { angle: "Right", image: "/report_images/3/right_damage.jpg", description: "Significant passenger side damage" }
+        { angle: "Front", image: "/report_images/3/front_damage.jpg", description: "Severe front-end damage with missing bumper, grille, and headlights" },
+        { angle: "Rear", image: "/report_images/3/rear_damage.jpg", description: "No visible damage to rear section" },
+        { angle: "Left", image: "/report_images/3/left_damage.jpg", description: "Front fender buckled and misaligned" },
+        { angle: "Right", image: "/report_images/3/right_damage.jpg", description: "Front fender buckled and misaligned" }
       ],
       damages: [
         {
-          part: "Front Hood",
-          severity: 85,
-          type: "Major Dent",
-          description: "Large dent affecting hood structure and alignment",
-          repairEstimate: "$1,500 - $2,200",
-          priority: "Critical"
-        },
-        {
           part: "Front Bumper",
-          severity: 90,
-          type: "Severe Damage",
-          description: "Bumper severely damaged, requires complete replacement",
-          repairEstimate: "$1,800 - $2,500",
+          severity: 100,
+          type: "Missing / Destroyed",
+          description: "Front bumper completely missing or destroyed",
+          repairEstimate: "৳80,000 - ৳120,000",
           priority: "Critical"
         },
         {
-          part: "Driver Side Door",
-          severity: 75,
-          type: "Major Dent",
-          description: "Large dent affecting door operation and alignment",
-          repairEstimate: "$1,200 - $1,800",
+          part: "Grille (Upper & Lower)",
+          severity: 100,
+          type: "Missing / Destroyed",
+          description: "Both upper and lower grille missing or destroyed",
+          repairEstimate: "৳60,000 - ৳90,000",
+          priority: "Critical"
+        },
+        {
+          part: "Headlights (Both)",
+          severity: 100,
+          type: "Missing / Destroyed",
+          description: "Both headlights missing or destroyed",
+          repairEstimate: "৳100,000 - ৳150,000",
+          priority: "Critical"
+        },
+        {
+          part: "Radiator / Core Support",
+          severity: 100,
+          type: "Smashed / Destroyed",
+          description: "Radiator and core support smashed or destroyed",
+          repairEstimate: "৳120,000 - ৳180,000",
+          priority: "Critical"
+        },
+        {
+          part: "Hood",
+          severity: 90,
+          type: "Buckled / Crumpled",
+          description: "Hood buckled and crumpled requiring replacement",
+          repairEstimate: "৳70,000 - ৳100,000",
           priority: "High"
         },
         {
-          part: "Passenger Side Door",
-          severity: 70,
-          type: "Dent & Scratches",
-          description: "Significant damage to passenger door panel",
-          repairEstimate: "$1,100 - $1,600",
+          part: "Front Fenders (Both)",
+          severity: 85,
+          type: "Buckled / Misaligned",
+          description: "Both front fenders buckled and misaligned",
+          repairEstimate: "৳80,000 - ৳120,000",
           priority: "High"
         },
         {
-          part: "Front Headlight",
-          severity: 80,
-          type: "Shattered",
-          description: "Headlight completely shattered, needs replacement",
-          repairEstimate: "$400 - $600",
+          part: "Chassis / Frame",
+          severity: 90,
+          type: "Suspected Major Structural Damage",
+          description: "Suspected major structural damage to chassis",
+          repairEstimate: "৳40,000 - ৳60,000",
           priority: "High"
         },
         {
-          part: "Side Mirror",
-          severity: 65,
-          type: "Broken",
-          description: "Side mirror housing cracked and mirror broken",
-          repairEstimate: "$300 - $500",
-          priority: "Medium"
+          part: "Rear / Sides",
+          severity: 10,
+          type: "No Visible Damage",
+          description: "No visible damage to rear and side sections",
+          repairEstimate: "৳0 - ৳0",
+          priority: "Low"
         }
       ]
     }
@@ -230,7 +267,7 @@ export default function Report({ params }) {
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-indigo-600">{report.totalDamages}</div>
               <div className="text-sm text-gray-600">Total Damages Found</div>
@@ -238,6 +275,10 @@ export default function Report({ params }) {
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">{report.estimatedRepairCost}</div>
               <div className="text-sm text-gray-600">Estimated Repair Cost</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-600">{report.timeline}</div>
+              <div className="text-sm text-gray-600">Repair Timeline</div>
             </div>
           </div>
         </div>
