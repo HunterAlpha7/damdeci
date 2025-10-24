@@ -113,8 +113,8 @@ export default function Dashboard() {
               <div className="text-center">
                 <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center border border-gray-200">
                   <Image 
-                    src={`/logo${carSet.id}.png`}
-                    alt={`${carSet.manufacturer} logo`}
+                    src="/logo3.png"
+                    alt="Ford logo"
                     width={48}
                     height={48}
                     className="object-contain"
@@ -135,10 +135,14 @@ export default function Dashboard() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {Object.entries(selectedCarSet.images).map(([angle, imagePath]) => (
                 <div key={angle} className="text-center">
-                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-2 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
+                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-2 overflow-hidden">
+                    <Image 
+                      src={imagePath}
+                      alt={`${angle} view of ${selectedCarSet.name}`}
+                      width={200}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-sm font-medium text-gray-700 capitalize">{angle}</p>
                 </div>

@@ -46,7 +46,7 @@ export default function Report({ params }) {
         make: "Ford",
         model: "Mustang",
         year: "2007",
-        color: "Red"
+        color: "White"
       },
       overallSeverity: 42,
       totalDamages: 4,
@@ -97,7 +97,7 @@ export default function Report({ params }) {
         make: "Ford",
         model: "Escape SE",
         year: "2016",
-        color: "White"
+        color: "Black"
       },
       overallSeverity: 78,
       totalDamages: 6,
