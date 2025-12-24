@@ -8,7 +8,8 @@ export default function Home() {
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
+              <Image src="/logo.svg" alt="AutoTraceAI Logo" width={32} height={32} className="h-8 w-auto" />
               <h1 className="text-2xl font-bold text-indigo-600">AutoTraceAI</h1>
             </div>
             <div className="flex items-center space-x-4">
