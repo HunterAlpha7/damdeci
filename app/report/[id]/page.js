@@ -268,7 +268,7 @@ export default function Report({ params }) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-indigo-600">{report.totalDamages}</div>
               <div className="text-sm text-gray-600">Total Damages Found</div>
@@ -276,10 +276,6 @@ export default function Report({ params }) {
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">{report.estimatedRepairCost}</div>
               <div className="text-sm text-gray-600">Estimated Repair Cost</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{report.timeline}</div>
-              <div className="text-sm text-gray-600">Repair Timeline</div>
             </div>
           </div>
         </div>
