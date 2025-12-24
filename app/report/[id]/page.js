@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Report({ params }) {
   const resolvedParams = use(params);
-  
+
   const reportData = {
     1: {
       carInfo: {
@@ -199,7 +199,7 @@ export default function Report({ params }) {
   };
 
   const report = reportData[parseInt(resolvedParams.id)] || reportData[1];
-  
+
   // Debug logging
   console.log('Report ID:', resolvedParams.id);
   console.log('Parsed ID:', parseInt(resolvedParams.id));
@@ -236,12 +236,13 @@ export default function Report({ params }) {
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
+              <Image src="/logo.svg" alt="AutoTraceAI Logo" width={32} height={32} className="h-8 w-auto" />
               <h1 className="text-2xl font-bold text-indigo-600">AutoTraceAI</h1>
             </div>
             <div className="flex items-center space-x-4">
-              <Link 
-                href="/dashboard" 
+              <Link
+                href="/dashboard"
                 className="text-gray-600 hover:text-indigo-600"
               >
                 Back to Dashboard
@@ -266,7 +267,7 @@ export default function Report({ params }) {
               <div className="text-3xl font-bold text-gray-900">{report.overallSeverity}%</div>
             </div>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-indigo-600">{report.totalDamages}</div>
@@ -311,7 +312,7 @@ export default function Report({ params }) {
                     <td className="py-4 px-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-24 bg-gray-200 rounded-full h-2">
-                          <div 
+                          <div
                             className={`h-2 rounded-full ${getSeverityColor(damage.severity)}`}
                             style={{ width: `${damage.severity}%` }}
                           ></div>
@@ -328,7 +329,7 @@ export default function Report({ params }) {
 
         {/* Action Buttons */}
         <div className="mt-8 flex justify-center space-x-4">
-          <button 
+          <button
             onClick={downloadPDF}
             className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
           >
@@ -337,7 +338,7 @@ export default function Report({ params }) {
           <button className="border border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors">
             Share Report
           </button>
-          <Link 
+          <Link
             href="/dashboard"
             className="bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
           >
