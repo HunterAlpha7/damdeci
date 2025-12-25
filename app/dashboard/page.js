@@ -39,19 +39,37 @@ export default function Dashboard() {
   };
 
   const handleSubmit = () => {
-    // Check if at least one image is uploaded, or enforce all? 
-    // Allowing at least one for flexibility, but usually you'd want all.
-    // For now, let's proceed if at least one is there, or maybe all.
-    // The prompt says "keep 4 options of adding image", implies utilizing them.
+    // Check if at least one image is uploaded
+    if (!hasAtLeastOneImage) return;
 
     // Simulating processing
     setIsProcessing(true);
 
     setTimeout(() => {
       setIsProcessing(false);
-      // specific logic to route to a random report or a fixed one since we don't have a backend
-      // Using '1' as a default for the demo
-      router.push(`/report/1`);
+
+      // Determine the report ID based on the filename prefix
+      let targetReportId = 'error'; // Default to error page
+
+      const uploadedFiles = Object.values(images).filter(file => file !== null);
+
+      if (uploadedFiles.length > 0) {
+        const firstFilename = uploadedFiles[0].name;
+        // Extract the prefix from the first file
+        const prefix = firstFilename.charAt(0);
+
+        // Check if this prefix is valid (0, 1, or 2)
+        if (['0', '1', '2'].includes(prefix)) {
+          // Verify ALL other files share this prefix
+          const allMatch = uploadedFiles.every(file => file.name.startsWith(prefix));
+
+          if (allMatch) {
+            targetReportId = prefix;
+          }
+        }
+      }
+
+      router.push(`/report/${targetReportId}`);
     }, 3000);
   };
 

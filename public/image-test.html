@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Direct Image Test</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .image-container {
+            margin: 20px 0;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Direct Image Loading Test</h1>
+
+    <div class="image-container">
+        <h2>Method 1: Root Path (Correct)</h2>
+        <img src="/report_images/0/front_damage.jpg" alt="Front" onerror="this.alt='ERROR: Image failed to load!'">
+    </div>
+
+    <div class="image-container">
+        <h2>Method 2: Full URL</h2>
+        <img src="http://localhost:3000/report_images/0/front_damage.jpg" alt="Front Full URL"
+            onerror="this.alt='ERROR: Full URL failed!'">
+    </div>
+
+    <div class="image-container">
+        <h2>Method 3: Absolute Path from public</h2>
+        <img src="/report_images/0/left_damage.jpg" alt="Left" onerror="this.alt='ERROR: Left image failed!'">
+    </div>
+
+    <script>
+        // Log when images load or fail
+        document.querySelectorAll('img').forEach((img, index) => {
+            img.addEventListener('load', () => {
+                console.log(`Image ${index + 1} loaded successfully`);
+            });
+            img.addEventListener('error', (e) => {
+                console.error(`Image ${index + 1} FAILED TO LOAD`, e);
+            });
+        });
+    </script>
+</body>
+
+</html>

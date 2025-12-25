@@ -7,7 +7,47 @@ import Image from 'next/image';
 export default function Report({ params }) {
   const resolvedParams = use(params);
 
+  if (!resolvedParams || !resolvedParams.id) {
+    return <div>Loading report...</div>;
+  }
+
   const reportData = {
+    0: {
+      carInfo: {
+        make: "Toyota",
+        model: "Camry",
+        year: "2018",
+        color: "Black"
+      },
+      overallSeverity: 45.0,
+      totalDamages: 4,
+      estimatedRepairCost: "৳40,000 - ৳60,000 BDT",
+      timeline: "3-5 business days",
+      visualAssessment: [
+        { angle: "Front", image: "/report_images/0/front_damage.jpg", description: "Minor scratches on front bumper" },
+        { angle: "Left", image: "/report_images/0/left_damage.jpg", description: "Dent on left door" },
+        { angle: "Rear", image: "/report_images/0/rear_damage.jpg", description: "No visible damage" },
+        { angle: "Right", image: "/report_images/0/right_damage.jpg", description: "Scratches on right fender" }
+      ],
+      damages: [
+        {
+          part: "Front Bumper",
+          severity: 30,
+          type: "Scratches",
+          description: "Minor cosmetic scratches",
+          repairEstimate: "৳5,000 - ৳8,000",
+          priority: "Low"
+        },
+        {
+          part: "Left Door",
+          severity: 60,
+          type: "Dent",
+          description: "Visible dent requiring PDR",
+          repairEstimate: "৳15,000 - ৳20,000",
+          priority: "Medium"
+        }
+      ]
+    },
     1: {
       carInfo: {
         make: "Ford",
@@ -258,9 +298,6 @@ export default function Report({ params }) {
           <div className="flex justify-between items-start mb-4">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Damage Assessment Report</h1>
-              <p className="text-lg text-gray-600">
-                {report.carInfo.year} {report.carInfo.make} {report.carInfo.model} - {report.carInfo.color}
-              </p>
             </div>
             <div className="text-right">
               <div className="text-sm text-gray-500 mb-1">Overall Severity</div>
@@ -280,6 +317,76 @@ export default function Report({ params }) {
           </div>
         </div>
 
+
+        {/* Visual Damage Mapping */}
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Visual Damage Mapping</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Front View */}
+            <div className="group relative">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-3">
+                <img
+                  src={`/report_images/${resolvedParams.id}/front_damage.jpg`}
+                  alt="Front View"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 text-sm rounded">
+                  Front
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">Front view analysis</p>
+            </div>
+
+            {/* Rear View */}
+            <div className="group relative">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-3">
+                <img
+                  src={`/report_images/${resolvedParams.id}/rear_damage.jpg`}
+                  alt="Rear View"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 text-sm rounded">
+                  Rear
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">Rear view analysis</p>
+            </div>
+
+            {/* Left View */}
+            <div className="group relative">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-3">
+                <img
+                  src={`/report_images/${resolvedParams.id}/left_damage.jpg`}
+                  alt="Left View"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 text-sm rounded">
+                  Left
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">Left view analysis</p>
+            </div>
+
+            {/* Right View */}
+            <div className="group relative">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-3">
+                <img
+                  src={`/report_images/${resolvedParams.id}/right_damage.jpg`}
+                  alt="Right View"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300" />
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 text-sm rounded">
+                  Right
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">Right view analysis</p>
+            </div>
+          </div>
+        </div>
 
         {/* Detailed Damage Analysis */}
         <div className="bg-white rounded-lg shadow-sm p-6">
