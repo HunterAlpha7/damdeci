@@ -174,7 +174,7 @@ export default function Home() {
               AI-Powered Car Damage Assessment Platform
             </p>
             <p className="text-gray-500 text-sm">
-              © 2024 AutoTraceAI. All rights reserved.
+              © 2025 AutoTraceAI. All rights reserved.
             </p>
           </div>
         </div>
