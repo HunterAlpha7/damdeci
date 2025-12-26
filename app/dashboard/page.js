@@ -191,7 +191,7 @@ export default function Dashboard() {
             </a>
           </div>
           {!hasAtLeastOneImage && (
-            <p className="mt-2 text-sm text-gray-500">Please upload at least one image to proceed.</p>
+            <p className="mt-2 text-sm text-gray-500">Please upload all the images to proceed.</p>
           )}
         </div>
       </div>
