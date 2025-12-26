@@ -70,7 +70,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h3>
               <p className="text-gray-600">
-                Get comprehensive damage reports in under 2 minutes using our advanced Gemini 2.5 Pro Vision AI.
+                Get comprehensive damage reports in under 2 minutes using our advanced in-house AI model.
               </p>
             </div>
             
@@ -130,7 +130,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Analysis</h3>
               <p className="text-gray-600">
-                Our Gemini 2.5 Pro Vision AI analyzes every pixel to detect damage and assess severity.
+                Our in-house AI model analyzes every pixel to detect damage and assess severity.
               </p>
             </div>
             
